@@ -33,7 +33,7 @@ workflows:
             branches:
               only:
                 - master
-      - deloyment:
+      - deployment:
           filters:
             branches:
               only:
