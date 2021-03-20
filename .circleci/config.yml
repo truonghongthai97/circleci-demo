@@ -10,16 +10,19 @@ commands:
     steps:
       - run: echo <<parameters.to>>
 
-jobs:
-  building:
+executors:
+  my-executor:
     docker:
       - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+
+jobs:
+  building:
+    executor: my-executor
     steps:
       - checkout # check out the code in the project directory
       - run: echo "building process" # run the `echo` command
   deployment:
-    docker:
-      - image: cimg/node:14.10.1 # the primary container, where your job's commands are run
+    executor: my-executor
     steps:
       - checkout # check out the code in the project directory
       - sayhello
