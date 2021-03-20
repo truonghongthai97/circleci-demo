@@ -28,5 +28,13 @@ workflows:
   version: 2
   building_and_deployment: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
-      - building
-      - deployment
+      - building:
+        filters:
+          branches:
+            only:
+              - master
+      - deployment:
+        filters:
+          branches:
+            only:
+              - master
