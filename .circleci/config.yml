@@ -29,12 +29,12 @@ workflows:
   building_and_deployment: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - building:
-        filters:
-          branches:
-            only:
-              - master
-      - deployment:
-        filters:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
+      - deloyment:
+          filters:
+            branches:
+              only:
+                - master
